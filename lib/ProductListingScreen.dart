@@ -114,10 +114,23 @@ class ProductsListingScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: .start,
                       children: [
-                        Image.asset(
-                          product.image,
+                       Container(
                           height: 170.h,
-                          fit: BoxFit.cover,
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(product.image),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          alignment: Alignment.bottomRight,
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.favorite_border,
+                              color: Color(0xffDD8560),
+                            ),
+                          ),
                         ),
                         SizedBox(height: 8.h),
                         Text(product.name),
@@ -147,3 +160,4 @@ class ProductsListingScreen extends StatelessWidget {
     );
   }
 }
+//checking
